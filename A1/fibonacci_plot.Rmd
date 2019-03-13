@@ -1,0 +1,30 @@
+---
+title: "Fibonacci Plot"
+author: "Richard Kriz"
+date: "13.03.2019"
+output:
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r pressure, echo=FALSE}
+data <- read.csv(file="/home/richard/owncloud/BINF/AlgoUE2019/A1/time_outputs.csv", header = TRUE, sep = ",")
+plot(data$iteration, data$time_.s., ylab="time (s)", xlab = "Iteration")
+points(data$iteration[data$algorithm == "linear"],
+       data$time_.s.[data$algorithm == "linear"], col =
+         "black", pch = 19)
+points(data$iteration[data$algorithm == "exp_index"],
+       data$time_.s.[data$algorithm == "exp_index"], col =
+         "red", pch = 19)
+points(data$iteration[data$algorithm == "exp_max()_iter"],
+       data$time_.s.[data$algorithm == "exp_max()_iter"], col =
+         "green", pch = 19)
+legend("topleft", pch = 19, col = c("black", "red", "green"), c("linear", "exp_index", "exp_max()_iter"))
+```
+
+## Linear: linear, efficient algorithm
+## exp_index: exponential, inefficient algorithm, the efficient fibonacci algorithm is used as index for the returned values of the recursive functions
+## exp_max()_iter: exponential, inefficient algorithm, each returned value is checked against the list of found fibonacci numbers, if it is higher than max, it is a new fibonacci number
