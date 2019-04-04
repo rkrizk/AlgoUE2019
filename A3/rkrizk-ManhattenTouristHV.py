@@ -42,13 +42,13 @@ for i in range(edge_length-1):
     matrix[0].append(round(matrix[0][i]+float(G_right[0][i]), 2))
 
 for i in range(edge_length-1):
-    matrix.append([round(matrix[0][i]+float(G_down[i][0]), 2)])
+    matrix.append([round(matrix[i][0]+float(G_down[i][0]), 2)])
 
 # fill matrix horizontally
 for row in range(1, edge_length):
     for col in range(1, edge_length):
-        matrix[row].append(max(round(matrix[row-1][col]+float(G_down[row-1][col]), 2),
-                               round(matrix[row][col-1]+float(G_right[row][col-1]), 2)))
+        matrix[row].append(round(max(matrix[row-1][col]+float(G_down[row-1][col]),
+                                     matrix[row][col-1]+float(G_right[row][col-1])), 2))
 
 # for i in range(edge_length):
 #     print(matrix[i])
