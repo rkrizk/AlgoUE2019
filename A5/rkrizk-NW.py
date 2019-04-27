@@ -90,23 +90,23 @@ for row in range(1, len(t)+1):
 Print Matrix
 """
 
-if len(s) < 20 and len(t) < 20:
-    print(" ", "s", sep="\t", end="\t")
-    for col in range(len(s)):
-        print(s[col], end="\t")
-
-    print("")
-    print("t", end="\t")
-    for col in range(len(s)+1):
-        print(M[0][col], end="\t")
-
-    print("")
-    for row in range(1, len(t)+1):
-        print(t[row-1], end="\t")
-        for col in range(len(s)+1):
-            print(M[row][col], end="\t")
-        print("")
-    print("")
+# if len(s) < 20 and len(t) < 20:
+#     print(" ", "s", sep="\t", end="\t")
+#     for col in range(len(s)):
+#         print(s[col], end="\t")
+#
+#     print("")
+#     print("t", end="\t")
+#     for col in range(len(s)+1):
+#         print(M[0][col], end="\t")
+#
+#     print("")
+#     for row in range(1, len(t)+1):
+#         print(t[row-1], end="\t")
+#         for col in range(len(s)+1):
+#             print(M[row][col], end="\t")
+#         print("")
+#     print("")
 
 
 """
